@@ -44,3 +44,45 @@ const RegFile = struct {
         self.P &= ~flag;
     }
 };
+
+const OpCodeCC01 = enum(u3) {
+    ORA = 0b000,
+    AND = 0b001,
+    EOR = 0b010,
+    ADC = 0b011,
+    STA = 0b100,
+    LDA = 0b101,
+    CMP = 0b110,
+    SBC = 0b111,
+};
+
+const AddrModeCC01 = enum(u3) {
+    IDX_IND = 0b000,
+    ZERO = 0b001,
+    IMME = 0b010,
+    ABS = 0b011,
+    IND_IDX = 0b100,
+    ZERO_X = 0b101,
+    ABS_Y = 0b110,
+    ABS_X = 0b111,
+};
+
+const OpCodeCC10 = enum(u3) {
+    ASL = 0b000,
+    ROL = 0b001,
+    LSR = 0b010,
+    ROR = 0b011,
+    STX = 0b100,
+    LDX = 0b101,
+    DEC = 0b110,
+    INC = 0b111,
+};
+
+const AddrModeCC10 = enum(u3) {
+    IMME = 0b000,
+    ZERO = 0b001,
+    ACC = 0b010,
+    ABS = 0b011,
+    ZERO_X = 0b101,
+    ABS_X = 0b111,
+};
